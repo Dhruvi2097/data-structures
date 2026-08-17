@@ -1,3 +1,4 @@
+//find maximum number form an array using recursion
 #include<stdio.h>
 
 int findMax(int arr[], int n) {
