@@ -12,7 +12,9 @@ This repository contains the practical programs performed as part of my Data Str
 - Practical 06 program to implement singly linked list.
 - Practical 07 Program to implement singly circular linked list.
 - Practical 08 Program to construct a Binary Search Tree and demonstrate inorder, preorder, and postorder traversals
-More practicals will be added as the course progresses.
+- Practical 09: Program to implement and demonstrate DFS and BFS graph traversal techniques.
+- Practical 10: Program to implement Bubble Sort and Selection Sort techniques.
+- Practical 11: Program to implement Binary Search.
 
 ## Language
 
