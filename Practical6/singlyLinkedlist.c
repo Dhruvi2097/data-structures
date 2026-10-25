@@ -7,13 +7,19 @@ struct node{
     struct node *next;
 };
 struct node *first = NULL;
-struct node*create_node(int x)
+struct node* create_node(int x)
 {
-    struct node * temp;
-    temp = (struct node *) malloc(sizeof(struct node));
+    struct node *temp;
+    temp = (struct node *)malloc(sizeof(struct node));
+
+    if (temp == NULL) {
+        printf("Memory allocation failed!");
+        exit(1);
+    }
+
     temp->data = x;
     temp->next = NULL;
-    
+    return temp;
 }
 
 void display(){
@@ -158,50 +164,55 @@ void main(){
         printf("\n Enter your choice: ");
         scanf("%d", &choice);
 
-        switch(choice){
+        switch(choice)
+        {
             case 1:
-            printf("Enter data: ");
-            scanf("%d", &n);
-            insert_first(n);
-            break;
-
+                printf("Enter data: ");
+                scanf("%d", &n);
+                insert_first(n);
+                break;
+        
             case 2:
-            printf("the data in linked list: ");
-            display();
-            break;
-
+                printf("Enter data: ");
+                scanf("%d", &n);
+                insert_last(n);
+                break;
+        
             case 3:
-            printf("Enter data: ");
-            scanf("%d", &n);
-            insert_last(n);
-            break;
-
+                int pos;
+                printf("Enter data: ");
+                scanf("%d", &n);
+                printf("Enter the value after which to insert: ");
+                scanf("%d", &pos);
+                insert_after(n, pos);
+                break;
+        
             case 4:
-            printf("Deleted data: %d", delete_first());
-            break;
-
+                printf("Deleted data: %d", delete_first());
+                break;
+        
             case 5:
-            printf("Deleted data: %d", delete_last());
-            break;
-
+                printf("Deleted data: %d", delete_last());
+                break;
+        
             case 6:
-            printf("Enter position: ");
-            scanf("%d", &n);
-            printf("Deleted data: %d", delete_position(n));
-            break;
-
+                printf("Enter the value to delete: ");
+                scanf("%d", &n);
+                printf("Deleted data: %d", delete_position(n));
+                break;
+    
             case 7:
-            printf("the data in linked list: ");
-            display();
-            break;
-
+                printf("Data in linked list: ");
+                display();
+                printf("\n");
+                break;
+        
             case 8:
-            printf("\n Program ended successfully...");
-            exit(0);
-
-
+                printf("\nProgram ended successfully...");
+                exit(0);
+        
             default:
-            printf("Invalid choice...!");
-        }
+                printf("Invalid choice...!");
+        }    
     }
 }
